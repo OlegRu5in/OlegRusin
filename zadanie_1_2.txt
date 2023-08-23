@@ -1,0 +1,106 @@
+ЗАДАНИЕ 1
+Определить имя папки, в которой вы находитесь
+pwd
+Создать внутри этой папки каталог  с именем test1
+mkdir test1
+Перейти в папку test1
+cd test1
+Создать файл 1,2 и 3 внутри каталога test1
+touch {1..3}
+Проверить содержимое каталога test1
+ls
+Перейти в домашнюю директорию
+cd ..
+Создать папку test2 внутри домашней директории
+mkdir test2
+Удалить папку test2
+rmdir test2
+Удалить файл 2 из папки test1
+cd test1
+rm 2
+Создать папку в домашней директории test3 и добавить в нее два файла
+cd ..
+mkdir test3
+cd test3
+touch file{1..2}
+Удалить папку test3
+cd ..
+rm -rf test3
+Создать папку test4 в домашней директории
+mkdir test4
+Переместить файлы 1 и 3 из папки test1 в папку test4
+mv test1/1 test4
+mv test1/3 test4
+Добавить в файл 1 три строки со словами line
+cd test4
+echo line > 1
+echo line >> 1
+echo line >> 1
+Посмотреть содержимое файла 1
+cat 1
+Добавьте в файл 3 три строки со словами line
+echo line > 3
+echo line >> 3
+echo line >> 3
+Просмотрите содержимое двух файлов (1 и 3) сразу
+cat 1 3
+Используя один из редакторов замените все строки в файле 1
+nano 1
+нажимаем: ^\
+вводим(то что мы хотим заменить): line
+вводим (на что меняем): 123
+Выбираем заменить все: А
+выходим из редактора:^X
+сохраняем изменения: Y
+
+ЗАДАНИЕ 2
+Создать папку test 3
+mkdir test3
+Добавить в папку test 3 три файла 4, 5 и 6, в каждом из которых должно быть по 4 строки row1, row2, row3, row4
+cd test3
+touch {4..6}
+echo row1 > 4
+echo row2 >> 4
+echo row3 >> 4
+echo row4 >> 4
+echo row5 >> 4
+echo row1 > 5
+echo row2 >> 5
+echo row3 >> 5
+echo row4 >> 5
+echo row5 >> 5
+echo row1 > 6
+echo row2 >> 6
+echo row3 >> 6
+echo row4 >> 6
+echo row5 >> 6
+Найдите строку row2 в файле 5
+grep -i "row2" 5
+Найдите строку row в папке test3
+grep -R "row" .
+Посчитайте сколько строк с содержимым row в файле 6
+grep "row" -c 6
+Найдите файл 5 внутри папки test3
+find -name 5
+Используя команду find, удалите файл 5
+find -type f -name 5 -delete
+Используя команду echo, добавьте слово test в файл 4
+echo test > 4
+Замените слово test в файле 4 на fail
+echo fail > 4
+Добавьте в файл 4 слово test так, чтобы сохранилось содержимое
+echo test >> 4
+Просмотрите все процессы для юзеров не только в консоли, которые происrходят в системе
+ps aux
+Убейте процесс 666 в консоли
+kill 666
+Узнайте доступность ресурса artsiomrusau.com, используя ping
+ping artsiomrusau.com
+Отправьте 5 пакетов на сайт artsiomrusau.com
+ping -c 5 artsiomrusau.com
+Используя GET и команду curl, получите информацию о зарегистрированных питомцах на https://petstore.swagger.io/
+curl https://petstore.swagger.io/v2/pet/findByStatus/?status=available,sold,pending
+Используя POST и команду curl, создайте нового пользователя на https://petstore.swagger.io/
+curl -H 'Content-Type: application/json' --data '{"id":6568,"username":"Ivan",
+"firstName":"Ivan","lastName":"Ivanov","email":"ivanovii@gmail.com","password":"12345",
+"phone":"+123456789","userStatus":"0"}' https://petstore.swagger.io/v2/user

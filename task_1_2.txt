@@ -1,0 +1,18 @@
+Внесение изменений в файл READMI
+git add .
+git commit -m "add About me in READMI.MD"
+git push
+
+Создание локального репозитория на компьютере + объявить его удаленно
+mkdir Bash
+cd Bash
+echo 'Hello' > READMI.md
+git init
+git add 
+git commit -m "add new file"
+зоходим на github.com создаем репозиторий "Bash"
+git remote add origin git@github.com:OlegRu5in/Bash.git
+git branch -M main
+git push -u origin main
+
+
